@@ -13,7 +13,7 @@
 	<artifactId>sca-alert-jms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sca-alert-jms</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Módulo JMS de segurança e comunicação acionado pelo módulo de monitoramento</description>
 
 	<properties>
 		<java.version>1.8</java.version>
