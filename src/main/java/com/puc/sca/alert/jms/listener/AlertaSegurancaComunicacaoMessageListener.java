@@ -11,6 +11,13 @@ import com.puc.sca.integration.util.Alerta;
 import com.puc.sca.integration.util.Constants;
 import com.puc.sca.integration.util.NivelAlerta;
 
+
+/**
+ * Tópico JMS que dispara sirenes e alarmes via emails, sms e whatsapp e comunicando também os interessados.
+ * @author breno
+ *
+ */
+
 @Component
 public class AlertaSegurancaComunicacaoMessageListener extends AlertMessageListener {
 

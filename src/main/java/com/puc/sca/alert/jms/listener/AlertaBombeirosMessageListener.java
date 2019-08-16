@@ -7,6 +7,13 @@ import org.springframework.stereotype.Component;
 import com.puc.sca.integration.util.Alerta;
 import com.puc.sca.integration.util.Constants;
 
+
+/**
+ * Tópico JMS que envia alertas para o sistema terceiro dos bombeiros.
+ * @author breno
+ *
+ */
+
 @Component
 public class AlertaBombeirosMessageListener extends AlertMessageListener {
 

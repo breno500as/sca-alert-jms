@@ -11,6 +11,13 @@ import org.apache.http.impl.client.HttpClients;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.puc.sca.integration.util.Alerta;
 
+
+/**
+ * Classe base para envio dos alertas no formato json para os sistemas terceiros interessados.
+ * @author breno
+ *
+ */
+
 public abstract class AlertMessageListener {
 
 	public abstract void receiveAlert(Alerta alerta);
