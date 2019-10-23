@@ -10,9 +10,10 @@ import com.puc.sca.alert.jms.service.WhatsAppService;
 import com.puc.sca.integration.util.Alerta;
 import com.puc.sca.integration.util.Constants;
 
-
 /**
- * Tópico JMS que dispara sirenes e alarmes via emails, sms e whatsapp e comunicando também os interessados.
+ * Tópico JMS que dispara sirenes e alarmes via emails, sms e whatsapp e
+ * comunicando também os interessados.
+ * 
  * @author breno
  *
  */
@@ -33,12 +34,19 @@ public class AlertaSegurancaComunicacaoMessageListener extends AlertMessageListe
 	@JmsListener(destination = Constants.TOPICO_MODULO_SEGURACA_COMUNICACAO_EVACUACAO)
 	public void receiveAlert(Alerta alerta) {
 
-		String assunto = "Risco Iminente de rompimento de barragem";
-		String mensagem = "Saia imediatamente do local e siga os procedimentos de segurança...";
+		try {
 
-	//	this.emailService.send(assunto, mensagem);
-		this.smsService.send(mensagem);
-		this.whatsAppService.send(mensagem);
+			String assunto = "Risco Iminente de rompimento de barragem";
+			String mensagem = "Saia imediatamente do local e siga os procedimentos de segurança...";
+
+			// this.emailService.send(assunto, mensagem);
+			this.smsService.send(mensagem);
+			this.whatsAppService.send(mensagem);
+		} catch (Exception e) {
+			// Logar erro e levantar runtime exception
+			throw new RuntimeException(e);
+		}
+
 	}
 
 }
