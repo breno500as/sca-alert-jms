@@ -42,6 +42,6 @@ public abstract class AlertMessageListener {
 		httpPost.setEntity(entity);
 		httpPost.setHeader("Content-type", "application/json");
 		httpPost.setEntity(entity);
-		httpClient.execute(httpPost);
+		//httpClient.execute(httpPost);
 	}
 }
