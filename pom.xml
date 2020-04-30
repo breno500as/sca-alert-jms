@@ -28,7 +28,9 @@
 			</activation>
 			<properties>
 				<activatedProperties>dev</activatedProperties>
+				
 			</properties>
+			
 		</profile>
 		<profile>
 			<id>test</id>
@@ -51,6 +53,9 @@
 	</profiles>
 
 	<dependencies>
+	
+	
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
@@ -77,16 +82,24 @@
 			<optional>true</optional>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.puc.sca.util</groupId>
+			<artifactId>sca-util</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+		
+		
 
 	</dependencies>
 

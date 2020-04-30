@@ -1,14 +1,15 @@
 package com.puc.sca.alert.jms.listener;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
-import com.puc.sca.alert.jms.service.EmailService;
 import com.puc.sca.alert.jms.service.SmsService;
 import com.puc.sca.alert.jms.service.WhatsAppService;
 import com.puc.sca.integration.util.Alerta;
 import com.puc.sca.integration.util.Constants;
+import com.puc.sca.util.mail.EmailService;
 
 /**
  * Tópico JMS que dispara sirenes e alarmes via emails, sms e whatsapp e
@@ -19,7 +20,7 @@ import com.puc.sca.integration.util.Constants;
  */
 
 @Component
-public class AlertaSegurancaComunicacaoMessageListener extends AlertMessageListener {
+public class AlertaSegurancaComunicacaoMessageListener   {
 
 	@Autowired
 	private EmailService emailService;
@@ -29,8 +30,10 @@ public class AlertaSegurancaComunicacaoMessageListener extends AlertMessageListe
 
 	@Autowired
 	private WhatsAppService whatsAppService;
+	
+	@Value("${emails}")
+	private String emails;
 
-	@Override
 	@JmsListener(destination = Constants.TOPICO_MODULO_SEGURACA_COMUNICACAO_EVACUACAO)
 	public void receiveAlert(Alerta alerta) {
 
@@ -39,9 +42,9 @@ public class AlertaSegurancaComunicacaoMessageListener extends AlertMessageListe
 			String assunto = "Risco Iminente de rompimento de barragem";
 			String mensagem = "Saia imediatamente do local e siga os procedimentos de segurança...";
 
-			// this.emailService.send(assunto, mensagem);
-			this.smsService.send(mensagem);
-			this.whatsAppService.send(mensagem);
+			this.emailService.send(assunto, mensagem, this.emails);
+		//	this.smsService.send(mensagem);
+		//	this.whatsAppService.send(mensagem);
 		} catch (Exception e) {
 			// Logar erro e levantar runtime exception
 			throw new RuntimeException(e);
