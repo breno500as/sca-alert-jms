@@ -5,8 +5,8 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 import com.puc.sca.alert.jms.feign.clients.DefesaCivilFeignClient;
-import com.puc.sca.integration.util.Alerta;
-import com.puc.sca.integration.util.Constants;
+import com.puc.util.pojo.Alerta;
+import com.puc.util.pojo.Constants;
 
 /**
  * Tópico JMS que envia alertas para o sistema terceiro da defesa civil.
