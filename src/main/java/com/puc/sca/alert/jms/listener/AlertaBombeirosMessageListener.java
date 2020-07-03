@@ -5,8 +5,8 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 import com.puc.sca.alert.jms.feign.clients.BombeirosFeignClient;
-import com.puc.util.pojo.Alerta;
-import com.puc.util.pojo.Constants;
+import com.puc.sca.util.pojo.Alerta;
+import com.puc.sca.util.pojo.Constants;
 
 
 /**

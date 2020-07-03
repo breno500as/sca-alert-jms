@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import com.puc.sca.alert.jms.service.SmsService;
 import com.puc.sca.alert.jms.service.WhatsAppService;
 import com.puc.sca.util.mail.EmailService;
-import com.puc.util.pojo.Alerta;
-import com.puc.util.pojo.Constants;
+import com.puc.sca.util.pojo.Alerta;
+import com.puc.sca.util.pojo.Constants;
 
 /**
  * Tópico JMS que dispara sirenes e alarmes via emails, sms e whatsapp e
