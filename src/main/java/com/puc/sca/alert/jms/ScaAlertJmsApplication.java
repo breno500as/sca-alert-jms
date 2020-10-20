@@ -7,10 +7,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * Baixar o activemq: https://activemq.apache.org/components/classic/download/
- * Descompactar Ir na basta bin executar o comando: sudo ./activemq start URL do
- * message broker para configurações http://localhost:8161/admin usuário: admin
- * senha: admin
+ * 1 - Baixar o activemq: https://activemq.apache.org/components/classic/download/
+ * 2 - Descompactar ir na basta bin executar o comando: sudo ./activemq start 
+ * 3 - URL do message broker para configurações: http://localhost:8161/admin 
+ * 4 - Logar: usuário: admin
+ *            senha: admin
  * 
  * @author Breno
  *
